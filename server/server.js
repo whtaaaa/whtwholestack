@@ -1,9 +1,16 @@
 const express = require('express')
-const userRouter = require('./user')
+const Router = express.Router()
+const models = require('./module')
+const User = model.getModel('user')
 
-const app = express()
 
-app.use('/user', userRouter)
-app.listen(8888, function () {
-  console.log('npm start at 8888')
+Router.get('/list',function(req,res){
+  User.find({},function(err,doc){
+    return res.json(doc)
+  })
 })
+Router.get('/info',function(req,res){
+  return res.json({code:1})
+})
+
+module.exports = Router

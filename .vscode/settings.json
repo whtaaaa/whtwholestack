@@ -1,0 +1,40 @@
+{
+    "editor.tabSize": 2,
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 1,
+    "git.ignoreMissingGitWarning": true,
+    "editor.quickSuggestions": {
+        "strings": true
+    },
+    "emmet.useNewEmmet": true,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "javascript": "javascriptreact",
+        "plaintext": "jade"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "search.followSymlinks": false,
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript"
+    },
+    "emmet.includeLanguages": {
+        "wxml": "html"
+    },
+    "emmet.syntaxProfiles": {
+        "JavaScript React": "jsx"
+    },
+    //less 配置
+    "less.compile": {
+        "compress": true,
+        "outExt": ".wxss"
+    },
+    //sass 配置
+    "sass.formats": {
+        "format": "compressed",
+        "extension": ".css"
+    },
+    "minapp-vscode.disableAutoConfig": true
+}

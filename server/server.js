@@ -1,16 +1,15 @@
 const express = require('express')
-const Router = express.Router()
-const models = require('./module')
-const User = model.getModel('user')
+const userRouter = require('./user')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
+const app = express()
 
-Router.get('/list',function(req,res){
-  User.find({},function(err,doc){
-    return res.json(doc)
-  })
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/user',userRouter)
+app.use(cookieParser)
+
+app.listen(8888,function(){
+  console.log('Node app start at port 8888')
 })
-Router.get('/info',function(req,res){
-  return res.json({code:1})
-})
-
-module.exports = Router

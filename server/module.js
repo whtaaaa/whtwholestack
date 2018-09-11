@@ -28,6 +28,7 @@ const modules = {
 
 
 for(let m in modules){
+  console.log(m)
   mongoose.model(m,new mongoose.Schema(modules[m]))
 }
 

@@ -8,6 +8,8 @@ import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom'
 import Login from './container/login/login'
 import Register from './container/register/register'
 import AuthRoute from './component/authRoute/authRoute'
+import BossInfo from './container/bossinfo/bossinfo'
+import Geniusinfo from './container/geniusinfo/geniusinfo'
 import reducers from './redux/reducer'
 import './index.css'
 import './config'
@@ -15,16 +17,14 @@ const store = createStore(reducers,compose(
   applyMiddleware(thunk),
   window.devToolsExtension?window.devToolsExtension():f=>f
 ))
-function Boss(){
-  return <h2>Boss</h2>
-}
 
 ReactDom.render(
   (<Provider store={store}>
     <BrowserRouter>
       <div>
         <AuthRoute></AuthRoute>
-        <Route path='/boss' component={Boss}></Route>
+        <Route path='/bossinfo' component={BossInfo}></Route>
+        <Route path='/geniusinfo' component={Geniusinfo}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/register' component={Register}></Route>
       </div>

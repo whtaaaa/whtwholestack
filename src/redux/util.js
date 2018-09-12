@@ -4,7 +4,7 @@ export function getRedirectPath({
 }) {
   let url = (type === 'boss') ? '/boss' : '/genius'
   if(!avatar){
-    url+='/info'
+    url+='info'
   }
   return url
 }

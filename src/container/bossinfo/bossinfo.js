@@ -29,6 +29,11 @@ class BossInfo extends React.Component{
         { redirect&&redirect!==path ? <Redirect to={this.props.redirectTo}></Redirect>:''}
         <NavBar mode="dark">Boss完善信息页面</NavBar>
         <AvatarSelector
+          selectAvatar={(imgname)=>{
+            this.setState({
+              avatar:imgname
+            })
+          }}
         ></AvatarSelector>
         <InputItem onChange={(v)=>this.onChange('title',v)}>
           招聘职位</InputItem>

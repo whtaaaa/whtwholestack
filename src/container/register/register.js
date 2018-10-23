@@ -53,7 +53,7 @@ class Register extends React.Component{
             checked={this.props.state.type === 'genius'}
           >牛人</RadioItem>
           <RadioItem
-            onChange={()=>this.handleChange('type','boss')}
+            onChange={()=>this.props.handleChange('type','boss')}
             checked={this.props.state.type === 'boss'}
           >Boss</RadioItem>
           <WhiteSpace/>

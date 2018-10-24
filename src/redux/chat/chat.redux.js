@@ -33,6 +33,21 @@ function msgRecv(msg,userid){
   return {type:MSG_RECV,payload:msg,userid}
 }
 
+function msgRead({from,userid,num}){
+  return {type:MSG_READ,payload:{from,userid,num}}
+}
+
+export function readMsg(from){
+  return (dispatch,getState)=>{
+    axios.post('/user/readmsg',{from}).then(res=>{
+      const userid = getState().user._id
+      if(res.status == 200 && res.data.code ===0){
+        dispatch(msgRead({userid,from,num:res.data.num}))
+      }
+    })
+  }
+}
+
 export function recvMsg(){
   return (dispatch,getState) => {
     socket.on('recvmsg',function(data){
